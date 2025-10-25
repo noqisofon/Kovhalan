@@ -1,0 +1,14 @@
+# Visual Studio directory
+.vs/
+
+# vcpkg installed directory
+vcpkg_installed/
+
+# build compile result directory
+bin/
+obj/
+
+*~
+\#*#
+
+*.bak
