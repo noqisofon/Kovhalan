@@ -2,8 +2,9 @@
 
 namespace kovhalan {
 namespace adapters {
-PlayerController::PlayerController( std::shared_ptr<MovePlayerUseCase> aPlayerMoveUseCase )
-    : move_use_case_{ aPlayerMoveUseCase } {}
+PlayerController::PlayerController( std::shared_ptr<use_cases::MovePlayerUseCase> aPlayerMoveUseCase,
+                                    std::shared_ptr<drivers::Renderer>            renderer )
+    : move_use_case_{ aPlayerMoveUseCase }, renderer_{ renderer } {}
 
 InputHandler::KeyMap PlayerController::createKeyBinds() {
     return InputHandler::KeyMap{

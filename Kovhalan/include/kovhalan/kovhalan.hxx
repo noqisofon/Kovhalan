@@ -1,11 +1,11 @@
 #pragma once
 
-#include <cstdint>
 #include <cassert>
+#include <cstdint>
 #include <map>
 #include <memory>
+#include <optional>
 #include <string>
-
 
 #include <spdlog/spdlog.h>
 

@@ -11,14 +11,13 @@ class InputHandler {
     using KeyMap = std::map<SDL_Scancode, std::shared_ptr<ICommand>>;
 
  public:
-    InputHandler( KeyMap playerKeyBinds, KeyMap hudKeyBinds );
+    InputHandler( KeyMap keyBinds );
 
  public:
     std::shared_ptr<ICommand> handleInput( const SDL_Event &anEvent );
 
  private:
-    KeyMap player_key_binds_;
-    KeyMap hud_key_binds_;
+    KeyMap key_binds_;
 };
 } // namespace adapters
 } // namespace kovhalan

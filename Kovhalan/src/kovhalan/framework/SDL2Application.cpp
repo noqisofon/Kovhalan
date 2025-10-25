@@ -1,5 +1,8 @@
-#include "kovhalan/framework/SDL2Application.hxx"
 #include "kovhalan/adapters/ICommand.hxx"
+#include "kovhalan/repositories/InMemoryPlayerRepository.hxx"
+#include "kovhalan/use_cases/MovePlayerUseCase.hxx"
+
+#include "kovhalan/framework/SDL2Application.hxx"
 
 namespace kovhalan {
 namespace framework {
@@ -67,20 +70,34 @@ void SDL2Application::render() {
     if ( !renderer_ ) {
         return;
     }
-    ::SDL_Color background_color{ 0, 0, 0, 255 };
+    drivers::Color background_color{ 0, 0, 0, 255 };
 
-    ::SDL_SetRenderDrawColor( renderer_->nativeRenderer(),
-                              background_color.r,
-                              background_color.g,
-                              background_color.b,
-                              background_color.a );
+    renderer_->setDrawColor( background_color );
 
     player_controller_->draw();
     // hud_controller_->draw();
 
-    ::SDL_RenderPresent( renderer_->nativeRenderer() );
+    renderer_->present();
 }
 
-void SDL2Application::setupDependencies() {}
+void SDL2Application::setupDependencies() {
+    // リポジトリー
+    auto player_repository   = std::make_shared<repositories::InMemoryPlayerRepository>();
+
+    // ユースケース
+    auto move_player_usecase = std::make_shared<use_cases::MovePlayerUseCase>( player_repository );
+
+    // コントローラー
+    player_controller_       = std::make_shared<adapters::PlayerController>( move_player_usecase, renderer_ );
+    // hud_controller_=std::maked_shared<adapters::HudController>(  renderer_);
+
+    adapters::InputHandler::KeyMap player_binds = player_controller_->createKeyBinds();
+    // adapters::InputHandler::KeyMap hud_binds = hud_controller_->createKeyBinds();
+
+    adapters::InputHandler::KeyMap key_binds    = player_binds;
+    // player_binds.merge(hud_binds);
+
+    input_handler_                              = std::make_shared<adapters::InputHandler>( std::move( key_binds ) );
+}
 } // namespace framework
 } // namespace kovhalan

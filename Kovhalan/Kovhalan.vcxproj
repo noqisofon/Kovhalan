@@ -21,9 +21,16 @@
   <ItemGroup>
     <ClInclude Include="include\kovhalan\adapters\ICommand.hxx" />
     <ClInclude Include="include\kovhalan\adapters\InputHandler.hxx" />
-    <ClInclude Include="include\kovhalan\adapters\MovePlayerUseCase.hxx" />
+    <ClInclude Include="include\kovhalan\domain\Actor.hxx" />
+    <ClInclude Include="include\kovhalan\domain\Player.hxx" />
+    <ClInclude Include="include\kovhalan\repositories\InMemoryPlayerRepository.hxx" />
+    <ClInclude Include="include\kovhalan\repositories\IPlayerRepository.hxx" />
+    <ClInclude Include="include\kovhalan\use_cases\MovePlayerUseCase.hxx" />
     <ClInclude Include="include\kovhalan\adapters\PlayerController.hxx" />
     <ClInclude Include="include\kovhalan\adapters\PlayerMoveCommand.hxx" />
+    <ClInclude Include="include\kovhalan\domain\DroppedItem.hxx" />
+    <ClInclude Include="include\kovhalan\domain\Enemy.hxx" />
+    <ClInclude Include="include\kovhalan\domain\Entity.hxx" />
     <ClInclude Include="include\kovhalan\drivers\Color.hxx" />
     <ClInclude Include="include\kovhalan\drivers\Renderer.hxx" />
     <ClInclude Include="include\kovhalan\drivers\Texture.hxx" />
@@ -35,10 +42,13 @@
     <ClCompile Include="src\kovhalan\adapters\InputHandler.cpp" />
     <ClCompile Include="src\kovhalan\adapters\PlayerController.cpp" />
     <ClCompile Include="src\kovhalan\adapters\PlayerMoveCommand.cpp" />
+    <ClCompile Include="src\kovhalan\domain\Player.cpp" />
     <ClCompile Include="src\kovhalan\drivers\Renderer.cpp" />
     <ClCompile Include="src\kovhalan\drivers\Texture.cpp" />
     <ClCompile Include="src\kovhalan\drivers\Window.cpp" />
     <ClCompile Include="src\kovhalan\framework\SDL2Application.cpp" />
+    <ClCompile Include="src\kovhalan\repositories\InMemoryPlayerRepository.cpp" />
+    <ClCompile Include="src\kovhalan\use_cases\MovePlayerUseCase.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
