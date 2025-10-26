@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kovhalan/adapters/IMapValidator.hxx"
+#include "kovhalan/use_cases/IMapValidator.hxx"
 #include "kovhalan/domain/DungeonFloor.hxx"
 
 namespace kovhalan {
@@ -8,7 +8,7 @@ namespace adapters {
 /*!
  * \brief ダンジョンフロアのマップ検証を行うためのクラスを定義します。
  */
-class DungeonFloorValidator : public IMapValidator {
+class DungeonFloorValidator : public use_cases::IMapValidator {
  public:
     DungeonFloorValidator( std::shared_ptr<domain::DungeonFloor> dungeonFloor );
 

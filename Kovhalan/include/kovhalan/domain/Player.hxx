@@ -17,7 +17,7 @@ class Player : public Actor {
     Actor::Position getPosition() const override;
 
     bool
-    canMove( std::int32_t dx, std::int32_t dy, std::shared_ptr<adapters::IMapValidator> &mapValidator ) const override;
+    canMove( std::int32_t dx, std::int32_t dy, std::shared_ptr<use_cases::IMapValidator> &mapValidator ) const override;
 
     void moveTo( std::int32_t dx, std::int32_t dy ) override;
 

@@ -3,7 +3,7 @@
 #include "kovhalan/kovhalan.hxx"
 
 namespace kovhalan {
-namespace adapters {
+namespace use_cases {
 /*!
  * \brief マップの検証を行うためのインターフェースを定義します。
  */

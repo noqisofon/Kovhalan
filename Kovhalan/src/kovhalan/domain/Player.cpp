@@ -8,7 +8,9 @@ std::int32_t    Player::id() const { return 0; }
 
 Actor::Position Player::getPosition() const { return { x_, y_ }; }
 
-bool Player::canMove( std::int32_t dx, std::int32_t dy, std::shared_ptr<adapters::IMapValidator> &mapValidator ) const {
+bool            Player::canMove( std::int32_t                               dx,
+                      std::int32_t                               dy,
+                      std::shared_ptr<use_cases::IMapValidator> &mapValidator ) const {
     return mapValidator->isTileWalkable( x_ + dx, y_ + dy );
 }
 

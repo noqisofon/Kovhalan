@@ -3,7 +3,7 @@
 namespace kovhalan {
 namespace use_cases {
 MovePlayerUseCase::MovePlayerUseCase( std::shared_ptr<repositories::IPlayerRepository> playerRepository,
-                                      std::shared_ptr<adapters::IMapValidator>         mapValidator )
+                                      std::shared_ptr<IMapValidator>                   mapValidator )
     : player_repository_( std::move( playerRepository ) ), map_validator_{ std::move( mapValidator ) } {}
 
 bool MovePlayerUseCase::execute( std::uint32_t dx, std::uint32_t dy ) {
