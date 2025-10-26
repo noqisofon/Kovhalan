@@ -1,8 +1,8 @@
 #pragma once
 
 #include "kovhalan/kovhalan.hxx"
-#include "kovhalan/use_cases/IMapValidator.hxx"
-#include "kovhalan/repositories/IPlayerRepository.hxx"
+#include "kovhalan/domain/IMapValidator.hxx"
+#include "kovhalan/use_cases/IPlayerRepository.hxx"
 
 namespace kovhalan {
 namespace use_cases {
@@ -11,8 +11,8 @@ namespace use_cases {
  */
 class MovePlayerUseCase {
  public:
-    explicit MovePlayerUseCase( std::shared_ptr<repositories::IPlayerRepository> playerRepository,
-                                std::shared_ptr<IMapValidator>                   mapValidator );
+    explicit MovePlayerUseCase( std::shared_ptr<IPlayerRepository>     playerRepository,
+                                std::shared_ptr<domain::IMapValidator> mapValidator );
 
  public:
     /*!
@@ -24,8 +24,8 @@ class MovePlayerUseCase {
     bool execute( std::uint32_t x, std::uint32_t y );
 
  private:
-    std::shared_ptr<repositories::IPlayerRepository> player_repository_;
-    std::shared_ptr<IMapValidator>                   map_validator_;
+    std::shared_ptr<IPlayerRepository>     player_repository_;
+    std::shared_ptr<domain::IMapValidator> map_validator_;
 };
 } // namespace use_cases
 } // namespace kovhalan

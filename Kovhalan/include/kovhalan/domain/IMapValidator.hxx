@@ -3,7 +3,7 @@
 #include "kovhalan/kovhalan.hxx"
 
 namespace kovhalan {
-namespace use_cases {
+namespace domain {
 /*!
  * \brief マップの検証を行うためのインターフェースを定義します。
  */
@@ -22,5 +22,5 @@ class IMapValidator {
      */
     virtual bool isTileWalkable( std::int32_t x, std::int32_t y ) const = 0;
 };
-} // namespace adapters
+} // namespace domain
 } // namespace kovhalan

@@ -86,7 +86,7 @@ void SDL2Application::setupDependencies() {
     /* TODO: のだが、まだできていない…。 */
 
     /* このため、 `nullptr` にしておく。 */
-    std::shared_ptr<use_cases::IMapValidator> map_validator{ nullptr };
+    std::shared_ptr<domain::IMapValidator> map_validator{ nullptr };
 
     // リポジトリー
     auto player_repository   = std::make_shared<repositories::InMemoryPlayerRepository>();

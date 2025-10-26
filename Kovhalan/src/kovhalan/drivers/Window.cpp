@@ -24,7 +24,7 @@ Window::~Window() {
 }
 
 std::shared_ptr<Window> Window::create( std::string title, std::uint32_t width, std::uint32_t height ) {
-    return std::make_shared<Window>(title, width, height)  ;
+    return std::make_shared<Window>( title, width, height );
 }
 
 std::shared_ptr<Renderer> Window::renderer() {

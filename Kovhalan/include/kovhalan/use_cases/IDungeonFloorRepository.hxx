@@ -4,7 +4,7 @@
 #include "kovhalan/domain/DungeonFloor.hxx"
 
 namespace kovhalan {
-namespace repositories {
+namespace use_cases {
 /*!
  * \brief ダンジョンフロアのリポジトリインターフェースを定義します。
  */
@@ -17,5 +17,5 @@ class IDungeonFloorRepository {
 
     virtual void saveDungeonFloor( std::shared_ptr<domain::DungeonFloor> aDungeonFloor ) = 0;
 };
-} // namespace repositories
+} // namespace use_cases
 } // namespace kovhalan

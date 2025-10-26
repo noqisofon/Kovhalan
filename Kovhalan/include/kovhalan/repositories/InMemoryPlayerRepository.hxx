@@ -1,10 +1,10 @@
 #pragma once
 
-#include "kovhalan/repositories/IPlayerRepository.hxx"
+#include "kovhalan/use_cases/IPlayerRepository.hxx"
 
 namespace kovhalan {
 namespace repositories {
-class InMemoryPlayerRepository : public IPlayerRepository {
+class InMemoryPlayerRepository : public use_cases::IPlayerRepository {
  public:
     InMemoryPlayerRepository();
 

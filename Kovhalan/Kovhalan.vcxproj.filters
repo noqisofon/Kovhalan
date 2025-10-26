@@ -60,7 +60,7 @@
     <ClInclude Include="include\kovhalan\domain\Actor.hxx">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="include\kovhalan\repositories\IPlayerRepository.hxx">
+    <ClInclude Include="include\kovhalan\use_cases\IPlayerRepository.hxx">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="include\kovhalan\domain\Player.hxx">
@@ -69,7 +69,7 @@
     <ClInclude Include="include\kovhalan\repositories\InMemoryPlayerRepository.hxx">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="include\kovhalan\use_cases\IMapValidator.hxx">
+    <ClInclude Include="include\kovhalan\domain\IMapValidator.hxx">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="include\kovhalan\adapters\DungeonFloorValidator.hxx">
@@ -78,7 +78,7 @@
     <ClInclude Include="include\kovhalan\domain\DungeonFloor.hxx">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="include\kovhalan\repositories\IDungeonFloorRepository.hxx">
+    <ClInclude Include="include\kovhalan\use_cases\IDungeonFloorRepository.hxx">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="include\kovhalan\use_cases\GenerateDungeonUseCase.hxx">

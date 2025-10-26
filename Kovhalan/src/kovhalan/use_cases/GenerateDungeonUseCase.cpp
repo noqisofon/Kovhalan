@@ -4,8 +4,7 @@
 
 namespace kovhalan {
 namespace use_cases {
-GenerateDungeonUseCase::GenerateDungeonUseCase(
-    std::shared_ptr<repositories::IDungeonFloorRepository> aDungeonFloorRepository )
+GenerateDungeonUseCase::GenerateDungeonUseCase( std::shared_ptr<IDungeonFloorRepository> aDungeonFloorRepository )
     : dungeon_floor_repository_{ aDungeonFloorRepository }, rng_{ std::random_device{}() } {}
 
 void GenerateDungeonUseCase::execute( std::uint32_t width, std::uint32_t height ) {
@@ -19,7 +18,7 @@ void GenerateDungeonUseCase::execute( std::uint32_t width, std::uint32_t height 
     Distribution width_distri{ 5, 10 };
     Distribution height_distri{ 5, 8 };
     Distribution x_axis_distri{ 1, static_cast<std::int32_t>( width ) - 11 };
-    Distribution y_axis_distri{ 1, static_cast<std::int32_t>(height) - 9 };
+    Distribution y_axis_distri{ 1, static_cast<std::int32_t>( height ) - 9 };
 
     /* とりあえず、大きな部屋を作る。 */
     std::int32_t room_width  = width_distri( rng_ );

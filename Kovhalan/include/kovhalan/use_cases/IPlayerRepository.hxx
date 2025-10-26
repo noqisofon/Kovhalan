@@ -3,7 +3,7 @@
 #include "kovhalan/domain/Player.hxx"
 
 namespace kovhalan {
-namespace repositories {
+namespace use_cases {
 /*!
  * \brief プレイヤーリポジトリのインターフェース
  */
@@ -19,5 +19,5 @@ class IPlayerRepository {
 
     virtual void                            savePlayer( const domain::Player &aPlayer ) = 0;
 };
-} // namespace repositories
+} // namespace use_cases
 } // namespace kovhalan

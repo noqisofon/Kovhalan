@@ -21,14 +21,14 @@
   <ItemGroup>
     <ClInclude Include="include\kovhalan\adapters\DungeonFloorValidator.hxx" />
     <ClInclude Include="include\kovhalan\adapters\ICommand.hxx" />
-    <ClInclude Include="include\kovhalan\repositories\IDungeonFloorRepository.hxx" />
-    <ClInclude Include="include\kovhalan\use_cases\IMapValidator.hxx" />
+    <ClInclude Include="include\kovhalan\use_cases\IDungeonFloorRepository.hxx" />
+    <ClInclude Include="include\kovhalan\domain\IMapValidator.hxx" />
     <ClInclude Include="include\kovhalan\adapters\InputHandler.hxx" />
     <ClInclude Include="include\kovhalan\domain\Actor.hxx" />
     <ClInclude Include="include\kovhalan\domain\DungeonFloor.hxx" />
     <ClInclude Include="include\kovhalan\domain\Player.hxx" />
     <ClInclude Include="include\kovhalan\repositories\InMemoryPlayerRepository.hxx" />
-    <ClInclude Include="include\kovhalan\repositories\IPlayerRepository.hxx" />
+    <ClInclude Include="include\kovhalan\use_cases\IPlayerRepository.hxx" />
     <ClInclude Include="include\kovhalan\use_cases\GenerateDungeonUseCase.hxx" />
     <ClInclude Include="include\kovhalan\use_cases\MovePlayerUseCase.hxx" />
     <ClInclude Include="include\kovhalan\adapters\PlayerController.hxx" />
