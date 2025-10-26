@@ -7,7 +7,7 @@ namespace drivers {
 class Texture {
  public:
     Texture();
-    Texture(  SDL_Texture *nativeTexture );
+    Texture( SDL_Texture *nativeTexture );
 
  public:
     SDL_Texture *nativeTexture() const { return texture_; }

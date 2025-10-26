@@ -12,9 +12,12 @@ class Player : public Actor {
     Player( const Player &other );
 
  public:
-    std::int32_t id() const override;
+    std::int32_t    id() const override;
 
-    bool canMove( std::int32_t dx, std::int32_t dy ) const override;
+    Actor::Position getPosition() const override;
+
+    bool
+    canMove( std::int32_t dx, std::int32_t dy, std::shared_ptr<adapters::IMapValidator> &mapValidator ) const override;
 
     void moveTo( std::int32_t dx, std::int32_t dy ) override;
 

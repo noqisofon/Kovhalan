@@ -5,7 +5,6 @@
 
 namespace kovhalan {
 namespace drivers {
-
 class Texture;
 class Window;
 

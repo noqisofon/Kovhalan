@@ -9,7 +9,8 @@ namespace kovhalan {
 namespace adapters {
 class PlayerController {
  public:
-    PlayerController( std::shared_ptr<use_cases::MovePlayerUseCase> aPlayerMoveUseCase, std::shared_ptr<drivers::Renderer> renderer);
+    PlayerController( std::shared_ptr<use_cases::MovePlayerUseCase> aPlayerMoveUseCase,
+                      std::shared_ptr<drivers::Renderer>            renderer );
 
  public:
     InputHandler::KeyMap createKeyBinds();

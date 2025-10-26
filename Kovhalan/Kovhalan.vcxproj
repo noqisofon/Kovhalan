@@ -19,12 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\kovhalan\adapters\DungeonFloorValidator.hxx" />
     <ClInclude Include="include\kovhalan\adapters\ICommand.hxx" />
+    <ClInclude Include="include\kovhalan\repositories\IDungeonFloorRepository.hxx" />
+    <ClInclude Include="include\kovhalan\adapters\IMapValidator.hxx" />
     <ClInclude Include="include\kovhalan\adapters\InputHandler.hxx" />
     <ClInclude Include="include\kovhalan\domain\Actor.hxx" />
+    <ClInclude Include="include\kovhalan\domain\DungeonFloor.hxx" />
     <ClInclude Include="include\kovhalan\domain\Player.hxx" />
     <ClInclude Include="include\kovhalan\repositories\InMemoryPlayerRepository.hxx" />
     <ClInclude Include="include\kovhalan\repositories\IPlayerRepository.hxx" />
+    <ClInclude Include="include\kovhalan\use_cases\GenerateDungeonUseCase.hxx" />
     <ClInclude Include="include\kovhalan\use_cases\MovePlayerUseCase.hxx" />
     <ClInclude Include="include\kovhalan\adapters\PlayerController.hxx" />
     <ClInclude Include="include\kovhalan\adapters\PlayerMoveCommand.hxx" />
@@ -39,15 +44,18 @@
     <ClInclude Include="include\kovhalan\kovhalan.hxx" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\kovhalan\adapters\DungeonFloorValidator.cpp" />
     <ClCompile Include="src\kovhalan\adapters\InputHandler.cpp" />
     <ClCompile Include="src\kovhalan\adapters\PlayerController.cpp" />
     <ClCompile Include="src\kovhalan\adapters\PlayerMoveCommand.cpp" />
+    <ClCompile Include="src\kovhalan\domain\DungeonFloor.cpp" />
     <ClCompile Include="src\kovhalan\domain\Player.cpp" />
     <ClCompile Include="src\kovhalan\drivers\Renderer.cpp" />
     <ClCompile Include="src\kovhalan\drivers\Texture.cpp" />
     <ClCompile Include="src\kovhalan\drivers\Window.cpp" />
     <ClCompile Include="src\kovhalan\framework\SDL2Application.cpp" />
     <ClCompile Include="src\kovhalan\repositories\InMemoryPlayerRepository.cpp" />
+    <ClCompile Include="src\kovhalan\use_cases\GenerateDungeonUseCase.cpp" />
     <ClCompile Include="src\kovhalan\use_cases\MovePlayerUseCase.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
@@ -133,6 +141,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 /wd4996 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,6 +157,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 /wd4996 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,7 +172,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)include</AdditionalIncludeDirectories>
-      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>/utf-8 /wd4996 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -179,6 +189,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/utf-8 /wd4996 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

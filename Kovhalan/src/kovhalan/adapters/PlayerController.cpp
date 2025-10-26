@@ -17,7 +17,7 @@ InputHandler::KeyMap PlayerController::createKeyBinds() {
 
 void PlayerController::draw() {
     // TODO
-    //spdlog::info( "PlayerController::draw() called" );
+    // spdlog::info( "PlayerController::draw() called" );
 }
 } // namespace adapters
 } // namespace kovhalan

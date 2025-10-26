@@ -4,11 +4,12 @@ namespace kovhalan {
 namespace domain {
 Player::Player( const Player &other ) : x_{ other.x_ }, y_{ other.y_ } {}
 
-std::int32_t Player::id() const { return 0; }
+std::int32_t    Player::id() const { return 0; }
 
-bool         Player::canMove( std::int32_t dx, std::int32_t dy ) const {
-    /* TODO: 現在いるダンジョンフロアを参照する方法が不明。 */
-    return false;
+Actor::Position Player::getPosition() const { return { x_, y_ }; }
+
+bool Player::canMove( std::int32_t dx, std::int32_t dy, std::shared_ptr<adapters::IMapValidator> &mapValidator ) const {
+    return mapValidator->isTileWalkable( x_ + dx, y_ + dy );
 }
 
 void Player::moveTo( std::int32_t dx, std::int32_t dy ) {

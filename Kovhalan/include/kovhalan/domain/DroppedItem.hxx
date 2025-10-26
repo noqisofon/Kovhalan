@@ -1,5 +1,5 @@
 #pragma once
- 
+
 #include "kovhalan/domain/Entity.hxx"
 
 namespace kovhalan {

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "kovhalan/domain/Entity.hxx"
+#include "kovhalan/adapters/IMapValidator.hxx"
 
 namespace kovhalan {
 namespace domain {
@@ -9,11 +10,17 @@ namespace domain {
  */
 class Actor : public Entity {
  public:
-    virtual bool canMove( std::int32_t dx, std::int32_t dy ) const = 0;
+    using Position = std::tuple<std::int32_t, std::int32_t>;
 
-    virtual void moveTo( std::int32_t dx, std::int32_t dy )        = 0;
+ public:
+    virtual Position getPosition() const = 0;
 
-    virtual void setPosition( std::int32_t x, std::int32_t y )     = 0;
+    virtual bool
+    canMove( std::int32_t dx, std::int32_t dy, std::shared_ptr<adapters::IMapValidator> &mapValidator ) const = 0;
+
+    virtual void moveTo( std::int32_t dx, std::int32_t dy )                                                   = 0;
+
+    virtual void setPosition( std::int32_t x, std::int32_t y )                                                = 0;
 };
 } // namespace domain
 } // namespace kovhalan

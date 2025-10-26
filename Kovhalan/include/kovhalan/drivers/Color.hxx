@@ -4,7 +4,6 @@
 
 namespace kovhalan {
 namespace drivers {
-
 class Color {
  public:
     Color() : Color{ 0, 0, 0, 255 } {}
@@ -26,6 +25,5 @@ class Color {
     std::uint8_t blue_;
     std::uint8_t alpha_;
 };
-
 } // namespace drivers
 } // namespace kovhalan

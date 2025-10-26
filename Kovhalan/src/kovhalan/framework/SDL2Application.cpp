@@ -1,4 +1,5 @@
 #include "kovhalan/adapters/ICommand.hxx"
+#include "kovhalan/adapters/DungeonFloorValidator.hxx"
 #include "kovhalan/repositories/InMemoryPlayerRepository.hxx"
 #include "kovhalan/use_cases/MovePlayerUseCase.hxx"
 
@@ -81,18 +82,24 @@ void SDL2Application::render() {
 }
 
 void SDL2Application::setupDependencies() {
+    // ダンジョンを作成する。
+    /* TODO: のだが、まだできていない…。 */
+
+    /* このため、 `nullptr` にしておく。 */
+    std::shared_ptr<adapters::IMapValidator> map_validator{ nullptr };
+
     // リポジトリー
     auto player_repository   = std::make_shared<repositories::InMemoryPlayerRepository>();
 
     // ユースケース
-    auto move_player_usecase = std::make_shared<use_cases::MovePlayerUseCase>( player_repository );
+    auto move_player_usecase = std::make_shared<use_cases::MovePlayerUseCase>( player_repository, map_validator );
 
     // コントローラー
     player_controller_       = std::make_shared<adapters::PlayerController>( move_player_usecase, renderer_ );
-    // hud_controller_=std::maked_shared<adapters::HudController>(  renderer_);
+    // hud_controller_          = std::maked_shared<adapters::HudController>( renderer_ );
 
     adapters::InputHandler::KeyMap player_binds = player_controller_->createKeyBinds();
-    // adapters::InputHandler::KeyMap hud_binds = hud_controller_->createKeyBinds();
+    // adapters::InputHandler::KeyMap hud_binds    = hud_controller_->createKeyBinds();
 
     adapters::InputHandler::KeyMap key_binds    = player_binds;
     // player_binds.merge(hud_binds);
