@@ -6,7 +6,7 @@ namespace kovhalan {
 namespace drivers {
 class Renderer;
 class Window {
- protected:
+ public:
     Window();
     Window( SDL_Window *nativeWindow );
     Window( std::string title, std::uint32_t width, std::uint32_t height );
@@ -14,7 +14,6 @@ class Window {
     Window( const Window & ) = delete;
     Window( Window && )      = delete;
 
- public:
     ~Window();
 
  public:

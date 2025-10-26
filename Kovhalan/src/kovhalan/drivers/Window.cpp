@@ -24,12 +24,12 @@ Window::~Window() {
 }
 
 std::shared_ptr<Window> Window::create( std::string title, std::uint32_t width, std::uint32_t height ) {
-    return std::shared_ptr<Window>{ new Window( title, width, height ) };
+    return std::make_shared<Window>(title, width, height)  ;
 }
 
 std::shared_ptr<Renderer> Window::renderer() {
     if ( !renderer_ ) {
-        renderer_ = std::shared_ptr<Renderer>{ new Renderer( *this ) };
+        renderer_ = std::make_shared<Renderer>( *this );
     }
     return renderer_;
 }

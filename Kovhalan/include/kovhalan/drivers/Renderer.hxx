@@ -9,12 +9,11 @@ class Texture;
 class Window;
 
 class Renderer {
- protected:
+ public:
     Renderer( const Window &window );
     Renderer( const Renderer & ) = delete;
     Renderer( Renderer && )      = delete;
 
- public:
     ~Renderer();
 
  public:
