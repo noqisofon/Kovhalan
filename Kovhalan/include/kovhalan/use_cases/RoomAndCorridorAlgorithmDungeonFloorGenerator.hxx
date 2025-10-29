@@ -4,7 +4,6 @@
 
 namespace kovhalan {
 namespace use_cases {
-
 /*!
  * \brief 部屋と通路のアルゴリズムを使用してダンジョンフロアを生成するクラス
  */
