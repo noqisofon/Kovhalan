@@ -7,6 +7,7 @@
 #include <optional>
 #include <random>
 #include <string>
+#include <vector>
 
 #include <spdlog/spdlog.h>
 

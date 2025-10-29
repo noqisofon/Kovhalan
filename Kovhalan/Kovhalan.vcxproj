@@ -21,6 +21,8 @@
   <ItemGroup>
     <ClInclude Include="include\kovhalan\adapters\DungeonFloorValidator.hxx" />
     <ClInclude Include="include\kovhalan\adapters\ICommand.hxx" />
+    <ClInclude Include="include\kovhalan\domain\Room.hxx" />
+    <ClInclude Include="include\kovhalan\use_cases\IDungeonFloorGenerator.hxx" />
     <ClInclude Include="include\kovhalan\use_cases\IDungeonFloorRepository.hxx" />
     <ClInclude Include="include\kovhalan\domain\IMapValidator.hxx" />
     <ClInclude Include="include\kovhalan\adapters\InputHandler.hxx" />
@@ -42,6 +44,7 @@
     <ClInclude Include="include\kovhalan\drivers\Window.hxx" />
     <ClInclude Include="include\kovhalan\framework\SDL2Application.hxx" />
     <ClInclude Include="include\kovhalan\kovhalan.hxx" />
+    <ClInclude Include="include\kovhalan\use_cases\RoomAndCorridorAlgorithmDungeonFloorGenerator.hxx" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\kovhalan\adapters\DungeonFloorValidator.cpp" />
@@ -57,6 +60,7 @@
     <ClCompile Include="src\kovhalan\repositories\InMemoryPlayerRepository.cpp" />
     <ClCompile Include="src\kovhalan\use_cases\GenerateDungeonUseCase.cpp" />
     <ClCompile Include="src\kovhalan\use_cases\MovePlayerUseCase.cpp" />
+    <ClCompile Include="src\kovhalan\use_cases\RoomAndCorridorAlgorithmDungeonFloorGenerator.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
